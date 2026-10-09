@@ -1,149 +1,125 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080d19">
-  <title>我的第一个网址</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: system-ui, "Microsoft YaHei", sans-serif;
-      color: #eef3ff;
-      background: #080d19;
-      line-height: 1.7;
-    }
-    a { color: inherit; text-decoration: none; }
-    header {
-      max-width: 1050px;
-      margin: auto;
-      padding: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-    }
-    .logo { font-weight: 800; letter-spacing: 1px; }
-    nav { display: flex; gap: 20px; color: #aab7d1; font-size: 14px; }
-    main { max-width: 1050px; margin: auto; padding: 50px 24px 80px; }
-    .hero {
-      padding: 65px 0 75px;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      align-items: center;
-      gap: 35px;
-    }
-    .tag {
-      color: #79aaff;
-      font-size: 13px;
-      letter-spacing: 2px;
-    }
-    h1 { font-size: clamp(38px, 7vw, 68px); line-height: 1.15; margin: 18px 0; }
-    .desc { color: #aab7d1; font-size: 17px; max-width: 470px; }
-    .button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 22px;
-      border-radius: 10px;
-      background: #4c7dff;
-      color: white;
-      font-weight: 700;
-    }
-    .orb {
-      min-height: 260px;
-      display: grid;
-      place-items: center;
-      border: 1px solid #263858;
-      border-radius: 28px;
-      background: radial-gradient(circle at 50% 45%, #243e7b, #10182c 48%, #0b1020 75%);
-      box-shadow: 0 0 70px #2349a522;
-      font-size: 90px;
-    }
-    h2 { font-size: 28px; margin-bottom: 8px; }
-    .muted { color: #93a3bf; }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 25px;
-    }
-    .card {
-      padding: 24px;
-      border: 1px solid #24314a;
-      border-radius: 16px;
-      background: #101727;
-    }
-    .card .emoji { font-size: 28px; }
-    .card h3 { margin: 12px 0 5px; }
-    footer {
-      text-align: center;
-      padding: 25px;
-      border-top: 1px solid #1d2940;
-      color: #8392ad;
-      font-size: 13px;
-    }
-    @media (max-width: 650px) {
-      header { padding: 18px; }
-      nav { gap: 12px; font-size: 12px; }
-      main { padding: 25px 18px 55px; }
-      .hero { grid-template-columns: 1fr; padding: 45px 0; }
-      .orb { min-height: 190px; font-size: 70px; }
-      .cards { grid-template-columns: 1fr; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080d19">
+<meta name="description" content="个人主页，记录汽车维修、风景生活、个人照片与科技数码。">
+<title>我的个人空间</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:#080d19;color:#eef3ff;font-family:system-ui,"Microsoft YaHei",sans-serif;line-height:1.7}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:10;background:#080d19ed;border-bottom:1px solid #202d46;backdrop-filter:blur(12px)}
+.nav{max-width:1100px;margin:auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-weight:850;letter-spacing:1px;color:#8cb4ff}
+nav{display:flex;gap:17px;flex-wrap:wrap;font-size:13px;color:#b6c4df}
+nav a:hover{color:#80aaff}
+main{max-width:1100px;margin:auto;padding:20px 22px 65px}
+.hero{min-height:440px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:32px;padding:55px 0}
+.tag{color:#80aaff;font-size:12px;letter-spacing:3px}
+h1{font-size:clamp(38px,7vw,65px);line-height:1.2;margin:16px 0}
+h2{font-size:27px;margin:0 0 5px}
+h3{margin:10px 0 4px}
+p{margin:8px 0}
+.muted{color:#9eacc6}
+.button{display:inline-block;background:#477cff;color:white;border-radius:10px;padding:10px 18px;margin-top:17px;font-weight:700}
+.hero-art{min-height:290px;border:1px solid #293d64;border-radius:24px;overflow:hidden;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,#294a91,#121c34 55%,#0a1020);font-size:100px;box-shadow:0 0 60px #315be51a}
+section.content{margin-top:55px}
+.section-head{margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;margin-top:22px}
+.card{min-width:0;overflow:hidden;background:#101727;border:1px solid #263550;border-radius:16px;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);border-color:#547bd0}
+.card img{display:block;width:100%;height:190px;object-fit:cover;background:#172238}
+.card-body{padding:16px}
+.emoji{font-size:27px}
+.pill{display:inline-block;color:#9ebdff;background:#1a2b4c;border-radius:20px;padding:3px 9px;font-size:12px}
+.video-box{position:relative;width:100%;aspect-ratio:16/9;background:#111b2e;border-radius:14px;overflow:hidden;margin-top:20px}
+.video-box iframe{width:100%;height:100%;border:0}
+.note{padding:15px;border:1px dashed #3a4b6b;border-radius:12px;color:#aab9d3;font-size:14px;margin-top:18px}
+footer{border-top:1px solid #202d46;padding:25px;text-align:center;color:#8190ab;font-size:13px}
+@media(max-width:700px){
+ .nav{align-items:flex-start;flex-direction:column;gap:8px}
+ nav{gap:12px}
+ main{padding:12px 16px 45px}
+ .hero{grid-template-columns:1fr;padding:40px 0;gap:22px}
+ .hero-art{min-height:190px;font-size:75px}
+ .grid{grid-template-columns:1fr}
+ .card img{height:auto;aspect-ratio:16/9}
+ h2{font-size:24px}
+}
+</style>
 </head>
 <body>
-  <header>
-    <a class="logo" href="#">MY WEBSITE.</a>
-    <nav>
-      <a href="#home">首页</a>
-      <a href="#about">关于</a>
-      <a href="#interests">兴趣</a>
-      <a href="https://github.com/sxweiping2020">GitHub</a>
-    </nav>
-  </header>
+<header>
+ <div class="nav">
+  <a class="logo" href="#home">WEIPING · SPACE</a>
+  <nav>
+   <a href="#home">首页</a>
+   <a href="#repair">汽车维修</a>
+   <a href="#life">风景生活</a>
+   <a href="#photos">个人照片</a>
+   <a href="#tech">科技数码</a>
+   <a href="#videos">视频</a>
+  </nav>
+ </div>
+</header>
+<main>
+ <section class="hero" id="home">
+  <div>
+   <div class="tag">WELCOME TO MY WORLD</div>
+   <h1>我的个人空间<span style="color:#78a5ff">.</span></h1>
+   <p class="muted">记录汽车维修经验、生活中的风景、个人照片与科技数码。用自己的方式，留下每一个值得记录的瞬间。</p>
+   <a class="button" href="#repair">探索我的世界 ↓</a>
+  </div>
+  <div class="hero-art" aria-label="科技风装饰">⌘</div>
+ </section>
 
-  <main>
-    <section class="hero" id="home">
-      <div>
-        <div class="tag">WELCOME TO MY WORLD</div>
-        <h1>我的第一个网址<span style="color:#78a5ff">.</span></h1>
-        <p class="desc">记录生活、技术与自己的兴趣。这里是我的个人空间，也是探索数字世界的起点。</p>
-        <a class="button" href="https://github.com/sxweiping2020">访问我的 GitHub ↗</a>
-      </div>
-      <div class="orb" aria-label="科技装饰">⌘</div>
-    </section>
+ <section class="content" id="repair">
+  <div class="section-head"><span class="pill">01 / WORK</span><h2>🔧 汽车维修</h2><p class="muted">记录维修案例、故障诊断与实用技巧。</p></div>
+  <div class="grid">
+   <article class="card"><img loading="lazy" src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80" alt="汽车发动机维修"><div class="card-body"><h3>维修与检查</h3><p class="muted">记录检修过程与工具使用。</p></div></article>
+   <article class="card"><img loading="lazy" src="https://images.unsplash.com/photo-1632823471565-1ecdf5c7b8a5?auto=format&fit=crop&w=900&q=80" alt="汽车维修场景"><div class="card-body"><h3>故障诊断</h3><p class="muted">以后可以添加真实维修案例与故障码分析。</p></div></article>
+   <article class="card"><img loading="lazy" src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=900&q=80" alt="汽车维修工具"><div class="card-body"><h3>工具与经验</h3><p class="muted">分享工具、保养和维修心得。</p></div></article>
+  </div>
+ </section>
 
-    <section id="about">
-      <h2>关于这里</h2>
-      <p class="muted">用简单的网页记录日常，分享技术探索，也留下一些值得回看的瞬间。</p>
-    </section>
+ <section class="content" id="life">
+  <div class="section-head"><span class="pill">02 / LIFE</span><h2>🌄 风景生活</h2><p class="muted">收藏旅途、城市与自然风景。</p></div>
+  <div class="grid">
+   <article class="card"><img loading="lazy" src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=80" alt="湖泊与山景"><div class="card-body"><h3>山川湖泊</h3><p class="muted">把旅途中遇见的美景记录下来。</p></div></article>
+   <article class="card"><img loading="lazy" src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=900&q=80" alt="城市风景"><div class="card-body"><h3>城市漫步</h3><p class="muted">发现熟悉城市里的新角落。</p></div></article>
+   <article class="card"><img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="户外自然风景"><div class="card-body"><h3>自然时刻</h3><p class="muted">记录阳光、天空和沿途风景。</p></div></article>
+  </div>
+ </section>
 
-    <section id="interests" style="margin-top:45px">
-      <h2>我的兴趣</h2>
-      <p class="muted">保持好奇，持续探索。</p>
-      <div class="cards">
-        <article class="card">
-          <div class="emoji">🌌</div>
-          <h3>生活记录</h3>
-          <p class="muted">记录日常点滴，珍藏生活中的小发现。</p>
-        </article>
-        <article class="card">
-          <div class="emoji">💻</div>
-          <h3>技术探索</h3>
-          <p class="muted">了解新工具、新技术，动手实践。</p>
-        </article>
-        <article class="card">
-          <div class="emoji">🚀</div>
-          <h3>兴趣世界</h3>
-          <p class="muted">保持好奇，让兴趣带我发现更多可能。</p>
-        </article>
-      </div>
-    </section>
-  </main>
+ <section class="content" id="photos">
+  <div class="section-head"><span class="pill">03 / GALLERY</span><h2>📷 个人照片</h2><p class="muted">这里先展示示例图片，后续可以换成自己的照片。</p></div>
+  <div class="grid">
+   <article class="card"><img loading="lazy" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80" alt="人物肖像示例"><div class="card-body"><h3>个人瞬间</h3><p class="muted">替换成自己的照片。</p></div></article>
+   <article class="card"><img loading="lazy" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80" alt="人物照片示例"><div class="card-body"><h3>生活记录</h3><p class="muted">留下生活中的美好时刻。</p></div></article>
+   <article class="card"><img loading="lazy" src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=900&q=80" alt="日常记录示例"><div class="card-body"><h3>值得收藏</h3><p class="muted">以后可以放入自己的图片。</p></div></article>
+  </div>
+ </section>
 
-  <footer>© 2026 我的第一个网址 · 用好奇心探索世界</footer>
+ <section class="content" id="tech">
+  <div class="section-head"><span class="pill">04 / TECHNOLOGY</span><h2>💻 科技数码</h2><p class="muted">关注软件、设备、网络和新技术。</p></div>
+  <div class="grid">
+   <article class="card"><div class="card-body"><div class="emoji">🌐</div><h3>网络与工具</h3><p class="muted">记录实用网站、网络配置与数字工具。</p></div></article>
+   <article class="card"><div class="card-body"><div class="emoji">🔐</div><h3>隐私与安全</h3><p class="muted">探索账户安全、开源软件与隐私保护。</p></div></article>
+   <article class="card"><div class="card-body"><div class="emoji">🚀</div><h3>新技术体验</h3><p class="muted">记录值得尝试的科技产品和新发现。</p></div></article>
+  </div>
+ </section>
+
+ <section class="content" id="videos">
+  <div class="section-head"><span class="pill">05 / VIDEO</span><h2>▶️ 视频展示</h2><p class="muted">这里可以嵌入 YouTube 等支持嵌入播放的视频。</p></div>
+  <div class="video-box">
+   <iframe src="https://www.youtube-nocookie.com/embed/ScMzIvxBSi4" title="示例视频播放器" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  <div class="note">这是示例视频。发布后如果无法播放，可能是网络限制或视频来源不支持嵌入；之后可以替换成你自己的公开视频链接。</div>
+ </section>
+</main>
+<footer>© 2026 我的个人空间 · 记录生活，探索技术</footer>
 </body>
 </html>
